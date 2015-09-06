@@ -140,12 +140,55 @@ int demoModInt(int a, int b) {
     cout << "Fixed integer modulo: " << ma << " mod " << mb << " = " << md << endl << endl;
 }
 
+// BaseInt demo: convert decimal value to base n
+int demoBaseInt(int a, int n) {
+    cout << "Decimal " << a << " in base " << n << " is ";
+
+    BaseInt bi(n);
+    vector<int> v;
+
+    bi.from10(v, a);
+
+    vector<int>::iterator i;
+    for(i = v.begin(); i != v.end(); i++)
+    {
+        cout << *i;
+    }
+    cout << endl << endl;
+}
+
+// BaseInt demo: convert base n value to decimal, n must be between -10 and 10
+int demoBaseInt(const char s[], int n) {
+    BaseInt bi(n);
+
+    vector<int> v;
+    const char *p = s;
+    while(*p) {
+        int d = *p - '0';
+        v.push_back(d);
+        p++;
+    }
+
+    cout << "Convert " << s << " in base " << n << " to decimal: " << bi.to10(v) << endl << endl;
+}
+
 int main() {
 
+    // some demos for ModInt
     demoModInt(17, 5);
     demoModInt(17, -5);
     demoModInt(-17, 5);
     demoModInt(-17, -5);
-    
+
+    // some demos for BaseInt
+    demoBaseInt(1000, 3);
+    demoBaseInt(1000, -3);
+    // demoBaseInt(-1000, 3); /* this should fail */
+    demoBaseInt(-1000, -3);
+
+    demoBaseInt("1101001", 3);
+    demoBaseInt("2212001", -3);
+    demoBaseInt("12101012", -3);
+
     return 0;
 }
