@@ -49,7 +49,7 @@ int from10(int base, vector<int> &a, int n) {
     }
 }
 
-// demo for ModInt class and its differences from standard integers
+// demo for division / modulo oprations and its differences from standard integer divisions
 int demoMod(int a, int b) {
     cout << "Demo for pair (" << a << "," << b << "):" << endl;
     int c = a / b;
@@ -64,7 +64,7 @@ int demoMod(int a, int b) {
     cout << "Fixed integer modulo: " << a << " mod " << b << " = " << md << endl << endl;
 }
 
-// BaseInt demo: convert decimal value to base n
+// demo: convert decimal value to base n
 int demoBase(int a, int n) {
     cout << "Decimal " << a << " in base " << n << " is ";
 
@@ -80,7 +80,7 @@ int demoBase(int a, int n) {
     cout << endl << endl;
 }
 
-// BaseInt demo: convert base n value to decimal, n must be between -10 and 10
+// demo: convert base n value to decimal, n must be between -10 and 10
 int demoBase(const char s[], int n) {
     vector<int> v;
     const char *p = s;
