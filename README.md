@@ -10,4 +10,4 @@ Currently completed three solutions using C++ and PHP:
 
 2. C/C++ - similar solution to previous, but procedural, without integer extention class
 
-3. PHP solution - coming soon
+3. PHP solution - similar to C/C++
